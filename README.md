@@ -7,7 +7,7 @@
 3. Navigate into the web directory (i.e. cd web)
 4. run docker commands to get server running - may have to **sudo**
     * `docker-compose build`
-    * `docker-compose run`
+    * `docker-compose -f docker-compose.yml up`
 5. Access your machine-ip address (docker-machine ip) in your web browser
     * `The UI should be viewable at **192.168.99.100/v2/ui**`
 6.  If you cannot access the UI then change the **'host'** address in the **swagger.yaml** file
