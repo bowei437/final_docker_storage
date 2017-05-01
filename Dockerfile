@@ -1,11 +1,15 @@
 FROM ubuntu:latest
 
-RUN apt-get update
-RUN apt-get install -y python3-dev python3-pip git nano
-RUN git clone https://github.com/ldev-r3-t4/storage_server.git
-WORKDIR storage_server/web
-
+RUN apt-get update && apt-get install -y \
+	git \
+	python3.4 \
+	python3-pip
+#update pip
 RUN pip3 install --upgrade pip
+RUN apt-get install -y python3-dev nano build-essential
+RUN git clone https://github.com/bowei437/final_docker_storage.git
+WORKDIR final_docker_storage/sweb
+
 RUN pip3 install -r requirements.txt
 RUN pip3 install Flask-API
 

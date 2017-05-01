@@ -15,8 +15,11 @@ from flask import jsonify
 from flask.ext.api import status
 from pymongo import MongoClient
 
+#____FOR DOCKER______
+client = MongoClient(os.environ['DB_PORT_27017_TCP_ADDR'],27017)
+
 #____FOR LOCAL_______
-client = MongoClient()
+#client = MongoClient()
 #_____________________
 
 db = client.analytic_db
