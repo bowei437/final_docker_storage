@@ -1,4 +1,5 @@
 # Storage API
+This is the docker form of the Storage Server for Team 4. It is used as a standalone and for isolated testing. For the primary implementation, click [here](https://github.com/ldev-r3-t4/storage_server) or see below.
 
 ## How to Generate the Docker container and run Locally ##
 1. go ahead and gitclone this repo
@@ -15,24 +16,6 @@
     * **Update swagger.yaml:** `host: "<Machine Ip-Address>"`
     * Repeat steps 4 and 5
 
-## How to Stop the Docker Container ##
-Run the command `docker stop [id]`, where `[id]` is the generated id number of your container. If you do not know what your container id is, use the command `docker ps` to view all running containers.
-
-## To configure host/ui address ##
-1. To change the server's IP-address edit the **'host'** parameter in main.
-    * `File: web/swagger_server/__main__.py`
-        - `app.run(host='<your_address>', port=<port_number>)`
-    
-2. Change the host parameter in the **swagger.yaml** file for the UI to work
-    * `web/swagger_server/server/swagger.yaml`
-        - `host: "<your_address>:<port_number>"`
-
-## Changing the port number ##
-1. Change the *<port_number>* in the same files for configuring the host/ui address
-2. Go into the base directory /docker_pathfind and edit the **docker-compose.yml**
-    * `ports: ` 
-        `- "<port_number>:<port_number>"`
-3. Change the **Dockerfile** (i.e. change the EXPOSE #)
-    * `#Expose port # for testing`
-    -`    EXPOSE <port_number>`
-    
+## Main Storage Implementation
+The primary storage server that is used by the project is located at the link below
+https://github.com/ldev-r3-t4/storage_server
